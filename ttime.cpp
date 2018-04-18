@@ -31,10 +31,10 @@ void TTime::print() {
 }
 
 TTime::TTime() {
-		std::time_t current = std::chrono::system_clock::now();
-		this->second = current.GetSecond();
-		this->minute = current.GetMinute();
-		this->hour = current.GetHour();
+		//std::time_t current = std::chrono::system_clock::now();
+		//this->second = current.GetSecond();
+		//this->minute = current.GetMinute();
+		//this->hour = current.GetHour();
 }
 
 TTime::TTime(short second, short minute, short hour) {
