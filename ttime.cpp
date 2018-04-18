@@ -5,15 +5,17 @@
 #include "ttime.h"
 
 void TTime::setSecond(short second) {
-	if (second < 59 && second >= 0) this->second = second;
+	if  (second < 59 && second >= 0) { this->second = second; } else { std::cout << "Bad second." << std::endl; }
 }
 
 void TTime::setMinute(short minute) {
-	if (minute < 59 && minute >= 0) this->minute = minute;
+	if (minute < 59 && minute >= 0) { this->minute = minute; } else { std::cout << "Bad minute." << std::endl; }
+
 }
 
 void TTime::setHour(short hour) {
-	if (hour < 59 && hour >= 0) this->hour = hour;
+	if (hour < 59 && hour >= 0) { this->hour = hour; } else { std::cout << "Bad hour." << std::endl; }
+
 }
 
 short TTime::getSecond() {
