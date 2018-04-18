@@ -1,50 +1,61 @@
-#include "ttime.h"
 #include <ctime>
-#include <chrono>
+#include <iostream>
+#include <iomanip>
+
+#include "ttime.h"
 
 void TTime::setSecond(short second) {
-		this->second = second;
+	if (second < 59 && second >= 0) this->second = second;
 }
 
 void TTime::setMinute(short minute) {
-		this->minute = minute;
+	if (minute < 59 && minute >= 0) this->minute = minute;
 }
 
 void TTime::setHour(short hour) {
-		this->hour = hour;
+	if (hour < 59 && hour >= 0) this->hour = hour;
 }
 
 short TTime::getSecond() {
-		return second;
+	return second;
 }
 
 short TTime::getMinute() {
-		return minute;
+	return minute;
 }
 
 short TTime::getHour() {
-		return hour;
+	return hour;
 }
 
 void TTime::print() {
-		// @TODO
+	std::cout << std::setfill('0') << std::setw(2) << this->hour << ":" << std::setfill('0') << std::setw(2) << this->minute;
+	if (this->second != 0)  std::cout << ":" << std::setfill('0') << std::setw(2) << this->second;
+
 }
+
+
 
 TTime::TTime() {
-		//std::time_t current = std::chrono::system_clock::now();
-		//this->second = current.GetSecond();
-		//this->minute = current.GetMinute();
-		//this->hour = current.GetHour();
+	std::time_t t= std::time(0);
+	std::tm* now = std::localtime(&t);
+	this->second = now->tm_sec;
+	this->minute= now->tm_min;
+	this->hour= now->tm_hour;
 }
 
-TTime::TTime(short second, short minute, short hour) {
+TTime::TTime(short hour, short minute, short second) {
+	if (second < 60 && second >= 0 && minute < 60 && minute >= 0 && hour < 24 && hour >= 0) {
 		this->second = second;
 		this->minute = minute;
 		this->hour = hour;
+	}
 }
 
-TTime::TTime(short minute, short hour) {
-		this->second = -1;
+TTime::TTime(short hour, short minute) {
+	if (minute < 60 && minute >= 0 && hour < 24 && hour >= 0) {
+		this->second = 0;
 		this->minute = minute;
 		this->hour = hour;
+	}
 }
