@@ -1,15 +1,20 @@
-class TDate {
-		private:
-				short day;
-				short month;
-				short year;
+#ifndef TDATE_H
+#define TDATE_H
 
-		public:
-				void setDate(short date);
-				short getDay();
-				short getMonth();
-				short getYear();
-				void print();
-				TDate();
-				TDate(short day, short month, short year);
+class TDate {
+        private:
+                short day;
+                short month;
+                short year;
+
+        public:
+                void setDate(short date);
+                short getDay();
+                short getMonth();
+                short getYear();
+                void print();
+                TDate();
+                TDate(short day, short month, short year);
 };
+
+#endif

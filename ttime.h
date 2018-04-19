@@ -1,3 +1,6 @@
+#ifndef TTIME_H
+#define TTIME_H
+
 class TTime {
 		private:
 				short second;
@@ -16,3 +19,5 @@ class TTime {
 				TTime(short hour, short minute, short second);
 				TTime(short minute, short second);
 };
+
+#endif
