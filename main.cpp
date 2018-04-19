@@ -1,7 +1,9 @@
 #include <iostream>
-using namespace std;
 #include "tdate.h"
 #include "ttime.h"
+
+using namespace std;
+
 int main()
 {
 	TDate D1, D2(1, 5, 2018);
