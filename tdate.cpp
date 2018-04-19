@@ -40,6 +40,9 @@ TDate::TDate(short day, short month, short year) {
 	this->year = year;
 	}
 	else {
+		this->day = 1;
+		this->month = 1;
+		this->year = 2000;
 		std::cout << "Bad date." << std::endl;
 	}
 }

@@ -51,7 +51,14 @@ TTime::TTime(short hour, short minute, short second) {
 		this->second = second;
 		this->minute = minute;
 		this->hour = hour;
+	} else {
+		this->second = 0;
+		this->minute = 0;
+		this->hour = 0;
+		std::cout << "Bad time." << std::endl;
 	}
+
+
 }
 
 TTime::TTime(short hour, short minute) {
@@ -59,5 +66,11 @@ TTime::TTime(short hour, short minute) {
 		this->second = 0;
 		this->minute = minute;
 		this->hour = hour;
+	} else {
+		this->second = 0;
+		this->minute = 0;
+		this->hour = 0;
+		std::cout << "Bad time." << std::endl;
 	}
+
 }
